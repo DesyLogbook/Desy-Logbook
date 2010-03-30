@@ -1,0 +1,89 @@
+/* 
+    Document   : logbook
+    Created on : Apr 17, 2009, 3:24:52 PM
+    Author     : Johannes Strampe
+    Description:
+        used for the logbook elements in the elog.jsp
+*/
+
+#contentFrame {
+     position:fixed;
+     top:120px;left:160px;
+     border: 1px solid #666666;
+     }
+
+
+#leftElem {
+    position:fixed;
+    top:120px;left:10px;
+    width:140px;
+    border: 1px solid #666666;
+    background-color:#abcdef;
+    overflow:auto;
+    }
+
+#topElem {
+    position:fixed;
+    top:10px;left:10px;
+    border: 1px solid #666666;
+    height:100px;background-color:#abcdef;
+    overflow:auto;
+    }
+
+#logo {
+    margin:0px;
+    padding: 5px 0px 0px 5px;
+    height:95px;
+    width:140px;
+    overflow:auto;
+}
+
+.leftMenuLink {
+    color: #000000;
+    display: block;
+    text-decoration: none;
+    margin: 0px 5px;
+    padding: 1px 0px 1px 5px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.leftMenuLink:hover {
+    background-color: #ffffff;
+    color: #444444;
+}
+
+.viewCurrentLink {
+    background-color: #F9F9F9;
+    color:#000000;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 4px;
+    font-family: sans-serif;
+    font-size: 12px;
+    border-color: #666666;
+    border-width:1px;
+    border-bottom-style:solid;
+    border-top-style:solid;
+    padding:2px;
+    text-align:center;
+}
+
+.viewCurrentLink:hover {
+    color:#444444;
+}
+
+.logoutLink {
+    color: #000000;
+    display: block;
+    text-decoration: none;
+    margin: 20px 5px 0px 5px;
+    padding: 1px 0px 1px 5px;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+.dropbox {
+    width:94%;
+    margin: 2px 3%;
+}

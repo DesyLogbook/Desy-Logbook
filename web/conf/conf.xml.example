@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    All these settings are valid for the logbooks and can be
+    overwritten in the logbook specific conf-file.
+-->
+
+<logbook>
+
+
+    <!--
+        Specify the roles that are needed for
+        all the logbooks
+    -->
+    <!--neededRole>manager</neededRole-->
+
+    <!--
+        Specify the ip's that are directly allowed
+        to view the logbook. Can start or finish
+        with asterisk
+        eg. 127.* or *32
+    -->
+    <!--allowIp>127.*</allowIp-->
+
+    <!--
+        Specify the ip's that are not allowed
+        to view the logbook. Can start or finish
+        with asterisk
+        eg. 127.* or *32
+    -->
+    <!--rejectIp>127.*</rejectIp-->
+
+    <!--
+        All javascript and css imports that are needed
+        for the main logbook page (elog.jsp)
+    -->
+    <css>css/logbook.css</css>
+    <css>css/tree.css</css>
+    <js>javascript/tree.js</js>
+    <js>javascript/treeConnection.js</js>
+    <js>javascript/resize.js</js>
+    <js>javascript/prototype.js</js>
+    
+
+    <!--
+        The url to access this app. This was developed
+        using Tomcat 5.5.
+        ATTENTION: The url can not end with a slash !!!
+    -->
+    <context>http://localhost:8080/newElog</context>
+
+    <!--
+        A path where all the configurations of each logbook
+        is stored. You want to backup this folder and its
+        content. You can create a folder somewhere on your
+        harddisc, but make sure it is not read/write protected.
+        An example could be: "/var/elogbook"
+    -->
+    <logbook_path>/home/yourhome/logbooks</logbook_path>
+
+    <!--
+        The url where the logbook-data can be reached. A
+        good webserver is Apache. Be sure you also
+        indicate all subfolders set in the "datapath" tag.
+    -->
+    <host_data>http://localhost/ELOGDATA</host_data>
+
+    <!--
+        The path to your webserver, where the data
+        will be stored.
+    -->
+    <datapath>/var/www/ELOGDATA</datapath>
+
+    <!--
+        languages:
+        en = english
+        de = deutsch
+    -->
+    <lang_code>en</lang_code>
+
+    <!--
+        A list of keyword-tags that can be
+        asoziated with logbook-entries
+    -->
+    <keyword_list>
+		<keyword>not set</keyword>
+	</keyword_list>
+
+    <!--
+        A list of location-tags that can be
+        asoziated with logbook-entries
+    -->
+	<location_list enabled="true" >
+		<location>not set</location>
+	</location_list>
+
+    <!--
+        The paths to needed servlets and xsls.
+        They normally should not be changed
+    -->
+    <tree_servlet>/Manager</tree_servlet>
+    <view_servlet>/XMLlist</view_servlet>
+    <edit_servlet>/FileEdit</edit_servlet>
+    <logo>images/logo.gif</logo>
+
+
+    <!-- Fragwuerdige Werte -->
+    <location_list enabled="true"></location_list>
+    <spellchecker enabled="false"></spellchecker>
+    <mail2expert enabled="true">
+    <list name="/elogbook/expert-lists/expert-mvp.xml"></list>
+    </mail2expert>
+    <shiftsummary enabled="false"></shiftsummary>
+    <view_history enabled="true"></view_history>
+    <edit_enable enabled="true"></edit_enable>
+    
+    
+</logbook>

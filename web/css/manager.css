@@ -1,0 +1,186 @@
+/*
+    Stylesheet used for the manager-app.
+    Used in the manager.jsp
+*/
+
+
+.entry {
+	white-space : nowrap;
+	overflow : auto;
+	background-color : #ffffff;
+	font-family : sans-serif;
+    font-size: small;
+	border-style : solid;
+	border-bottom-style : none;
+	border-right-style : none;
+	border-left-style : none;
+	border-color : #888888;
+	border-width : 1px;
+    padding:2px 5px 1px 2px;
+	margin : 5px;
+	margin-right : 0px;
+	margin-left : 20px;	
+}
+.label {
+	font-family : sans-serif;
+	border-right-style : solid;
+	border-color : #888888;
+	border-width : 1px;
+	padding-left : 10px;
+	padding-right : 10px;
+}
+.active {
+	font-family : sans-serif;
+	font-weight :bold;
+	border-style : solid;
+	border-color : #888888;
+	color : #ffffff;
+	background-color :#00dd00;
+	border-width : 1px;
+	padding-left : 5px;
+	padding-right : 5px;
+	margin-left : 5px;
+	margin-right : 5px;
+}
+.inactive {
+	font-family : sans-serif;
+	font-weight :bold;
+	border-style : solid;
+	border-color : #888888;
+	color : #ffffff;
+	background-color :#ff0000;
+	border-width : 1px;
+	padding-left : 5px;
+	padding-right : 5px;
+	margin-left : 5px;
+	margin-right : 5px;
+}
+.command {
+	font-family : sans-serif;
+	text-decoration : none;
+	border-style : solid;
+	border-color : #000000;
+	background-color :#eeeeee;
+	color :#000000;
+	border-width : 1px;
+	padding-left : 5px;
+	padding-right : 5px;
+	margin-left : 5px;
+	margin-right : 5px;
+}
+.edit {
+	
+	font-family : sans-serif;
+	font-size : 14px;
+	background-color : #f7f7f7;
+	border-style : solid;
+	border-color : #888888;
+	border-width : 1px;
+	padding-left : 10px;
+	padding-right : 10px;
+}
+
+.textarea {
+    font-family : sans-serif;
+	font-size : 12px;
+	background-color : #f7f7f7;
+	border-style : solid;
+	border-color : #888888;
+	border-width : 1px;
+	padding-left : 10px;
+}
+
+.header {
+	font-weight : bold;
+	text-align :center;	
+	font-family : serif;
+	font-size : 24px;
+	padding-top : 20px;
+	padding-bottom : 10px;	
+}
+
+.infoPopup {
+	background-color : #ffffff; 	
+	font-family : sans-serif;
+	border-style : hidden;
+	border-color : #888888;
+	border-width : 2px;
+	position : fixed;
+	padding : 15px;
+	margin : 0;
+	left : 0;
+	top : 0;
+	width : 100%;
+	height : 100%;
+	
+}
+
+.infoPopupContent {
+	overflow : auto;
+	text-align : left;
+	background-color : #ffffff;
+	width :80%;
+	height :70%;
+    padding :10px;
+    border: 1px solid #aaaaaa;
+    position:absolute;
+    top:85px;
+    left:85px;
+}
+
+.info {
+	border-style : hidden;
+	padding-left : 5px;
+	padding-right : 5px;
+	width : 16px;
+	height : 16px;
+	vertical-align: baseline;
+    cursor: pointer;
+}
+
+.OCButton {
+	border-style : hidden;
+	width : 16px;
+	height : 16px;
+	vertical-align : middle;
+}
+
+.OCButtonLink {
+	text-decoration: none;
+	border:0;
+	border:none;
+	border-style:none;
+}
+
+.linkElem {
+	font-family : sans-serif;
+	border-right-style : solid;
+	border-color : #888888;
+	border-width : 1px;
+	padding-left : 10px;
+	padding-right : 10px;
+	text-decoration : underline;
+	color : #000000;
+}
+
+.infoPopupCloseHint {
+	color :#000000;
+	font-size: 18px;
+    border: 1px dashed #aaaaaa;
+    padding: 15px;
+    cursor: pointer;
+    position:absolute;
+    left:15px;
+    top:15px;
+}
+
+
+img { border:0; }
+
+#time {
+    font-family:sans-serif;
+    font-size:12px;
+    font-weight:normal;
+    font-style:normal;
+    float:right;
+}

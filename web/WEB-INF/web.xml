@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <!-- ********** SERVLET ************ -->
+    <description>Manages the elogbook context.</description>
+    <display-name>newElog</display-name>
+    <servlet>
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>org.desy.logbook.servlets.Front</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NotAvailable</servlet-name>
+        <servlet-class>org.desy.logbook.servlets.NotAvailable</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SecureController</servlet-name>
+        <servlet-class>org.desy.logbook.servlets.Secure</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Manager</servlet-name>
+        <servlet-class>org.desy.logbook.servlets.Manager</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FileEdit</servlet-name>
+        <servlet-class>oldServlets.FileEdit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>XMLlist</servlet-name>
+        <servlet-class>oldServlets.XMLlist</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewLogbook</servlet-name>
+        <servlet-class>org.desy.logbook.servlets.NewLogbook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewServlet</servlet-name>
+        <servlet-class>org.desy.logbook.viewServlets.ViewServlet</servlet-class>
+    </servlet>
+    <!-- ********** MAPPING ************ -->
+    <servlet>
+        <servlet-name>NewEntryServlet</servlet-name>
+        <servlet-class>org.desy.logbook.viewServlets.NewEntryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NotAvailable</servlet-name>
+        <url-pattern>/NotAvailable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NotAvailable</servlet-name>
+        <url-pattern>*.xml</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SecureController</servlet-name>
+        <url-pattern>/SecureController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Manager</servlet-name>
+        <url-pattern>/Manager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileEdit</servlet-name>
+        <url-pattern>/FileEdit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewServlet</servlet-name>
+        <url-pattern>/XMLlist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewLogbook</servlet-name>
+        <url-pattern>/NewLogbook</url-pattern>
+        <init-param>
+            <param-name>properties</param-name>
+            <param-value>/WEB-INF/velocity.properties</param-value>
+        </init-param>
+    </servlet-mapping>
+    <!-- ********** CONFIG ************* -->
+    <servlet-mapping>
+        <servlet-name>NewEntryServlet</servlet-name>
+        <url-pattern>/NewEntryServlet</url-pattern>
+        <init-param>
+            <param-name>properties</param-name>
+            <param-value>/WEB-INF/velocity.properties</param-value>
+        </init-param>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <!-- ********** SECURITY *********** -->
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>A Server Configuration Form-Based Authentication Area</realm-name>
+        <form-login-config>
+            <form-login-page>/jsp/login.jsp</form-login-page>
+            <form-error-page>/jsp/error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-constraint>
+        <display-name>SecureController constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>SecureController-content</web-resource-name>
+            <url-pattern>/SecureController</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>*</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>Manager constraint</display-name>
+        <!--web-resource-collection>
+      <web-resource-name>Manager-content</web-resource-name>
+      <url-pattern>/index.jsp</url-pattern>
+    </web-resource-collection-->
+        <web-resource-collection>
+            <web-resource-name>Logbook creation form</web-resource-name>
+            <url-pattern>/jsp/newLogbook.jsp</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-role>
+        <description>
+      Rolle fuer den SecureController
+    </description>
+        <role-name>*</role-name>
+    </security-role>
+
+
+
+    <!-- ********** LOGBOOKS *********** -->
+    
+</web-app>

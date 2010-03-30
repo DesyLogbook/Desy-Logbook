@@ -1,0 +1,12 @@
+<html>
+
+<head>
+<title>Overview</title>
+</head>
+
+<a href="NewEntryServlet">Neuer Eintrag</a>
+
+<div>$content</div>
+
+</body>
+</html>

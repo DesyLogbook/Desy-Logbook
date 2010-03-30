@@ -1,0 +1,57 @@
+/*
+    Used for the elements of the javascript-tree.
+*/
+
+	.active { 
+				background-color:#F0F0FF;
+				/*border:1px dotted #E5E5FF;*/
+				border:1px dotted #888888;
+				border-right-style :hidden;
+				border-left-style :hidden;
+				font-weight : bold;
+	}
+	
+	.leftSpace { 
+				padding-left:15px;				
+	}
+		
+	#DivRoot-content 
+	{
+		background-color:#F9F9F9;
+		/*border:1px solid #EEE;*/
+        border-style:none;
+		white-space:nowrap;font-family:sans-serif;font-size:12px;
+		height:300px;
+		width:100%;
+		overflow:auto;
+		padding-bottom: 15px;	
+	}
+	
+	.contentSpan
+	{		
+		vertical-align : super; 	
+		cursor:pointer;
+		padding-left:2px;
+	}
+	.contentSpanEmpty
+	{
+		vertical-align : super; 	
+		cursor:pointer;
+		color:#888888;
+		padding-left:2px;
+		font-style:italic;
+	}
+	
+	#hideShowButton
+	{
+		background-color:#eeeeee;
+		height:100%;
+		width:5px;
+		margin:0;
+		padding:0;
+		position : fixed;
+		right:0px;
+		top:0px;
+		cursor:pointer;
+	}
+	

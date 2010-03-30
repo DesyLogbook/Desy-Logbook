@@ -1,0 +1,30 @@
+<html>
+
+<head>
+<title>New Entry</title>
+</head>
+
+<form method="post" action="$sendAction">
+
+    <p>Author:<input name="author" type="text" size="30" maxlength="30"></p>
+
+    <!--p>Severity:<select name="severity" size="1"><option value="NONE" selected>NONE</option></select></p-->
+
+    <!--p>Date Time:<input value="$date" name="date" type="text"><input value="$time" name="time" type="text"></p-->
+
+    <!--p>Keyword:<select name="keywords" size="1"><option value="0" selected>not set</option></select></p-->
+
+    <!--p>Location:<select name="location" size="1"><option value="0" selected>not set</option></select></p-->
+
+    <p>Title:<input value="" maxlength="150" name="title" type="text"></p>
+
+    <p>Text:<textarea cols="100" rows="14" name="text"></textarea></p>
+
+    <!--p>File upload:<input value="" size="30" type="file" name="image"></p-->
+
+    <p><input type="submit" value=" Absenden "></p>
+
+</form>
+
+</body>
+</html>
