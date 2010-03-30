@@ -1,0 +1,39 @@
+<h3>Installation</h3>
+<p><strong>Clone this repro</strong></p>
+<p>git clone git://github.com/DesyLogbook/Desy-Logbook.git</p>
+<br/>
+<p><strong>Requirements</strong></p>
+<p><a href="http://netbeans.org/downloads/index.html">NetBeans 6.8</a> all (with Tomcat 6.0.20)</p>
+<br/>
+<p><strong>Create NetBeans project</strong></p>
+<p>Start NetBeans</p>
+<p>Create a new project</p>
+<p>Categories: Java Web</p>
+<p>Projects: Web Application with Existing Sources</p>
+<p>Location: .../Desy-Logbook</p>
+<p>Java EE Version: Java EE 5</p>
+<p>Context Path: /newElog</p>
+<br/>
+<p><strong>More settings</strong></p>
+<p>cp web/conf/conf.xml.example web/conf/conf.xml</p>
+<p>Inside conf.xml:</p>
+<p>- Set &lt;logbook_path&gt; to an existing folder where the logbooks settings are saved</p>
+<p>- Make sure the application has write access to the path set in &lt;datapath&gt;</p>
+<p>- Check the port under &lt;context&gt;</p>
+<br/>
+<p><strong>Create a new logbook for testing</strong></p>
+<p>Run app</p>
+<p>Press 'Extra' and then 'Create a new Logbook'</p>
+<p>Enter username and password of the tomcat manager role (netbeans -> services -> Apache Tomcat 6.0.20 -> properties)</p>
+<p>Fill in</p>
+<p>Name: test</p>
+<p>Title: test title</p>
+<p>New shift: 3</p>
+<p>Press 'Send'</p>
+<p>Add the following xml snippet to the web/WEB-INF/web.xml before the &lt;/web-app&gt; tag:</p>
+<p>&lt;servlet-mapping&gt;</p>
+<p>    &lt;servlet-name&gt;FrontController&lt;/servlet-name&gt;</p>
+<p>    &lt;url-pattern&gt;/test&lt;/url-pattern&gt;</p>
+<p>&lt;/servlet-mapping&gt;</p>
+<br/>
+<p>run the project again and visit the test logbook</p>
