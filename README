@@ -1,48 +1,69 @@
+Description
+================================================
 
-Installation
-============
+yet to come...
 
-Clone this repro
-----------------
-git clone git://github.com/DesyLogbook/Desy-Logbook.git
+
 
 Requirements
-------------
+================================================
+
 NetBeans 6.8 all (with Tomcat 6.0.20) -> http://netbeans.org/downloads/index.html
 
-Create NetBeans project
------------------------
-Start NetBeans
-Create a new project
-Categories: Java Web
-Projects: Web Application with Existing Sources
-Location: .../Desy-Logbook
-Java EE Version: Java EE 5
-Context Path: /newElog
 
-More settings
--------------
-cp web/conf/conf.xml.example web/conf/conf.xml
-Inside conf.xml:
-- Set <logbook_path> to an existing folder where the logbooks settings are saved
-- Make sure the application has write access to the path set in <datapath>
-- Check the port under <context>
+
+Installation
+================================================
+
+If you want to develop the Desy-Logbook with NetBeans, you just have to follow the following steps:
+
+Clone this repro
+- git clone git://github.com/DesyLogbook/Desy-Logbook.git
+
+Create NetBeans project
+- Start NetBeans
+- Create a new project
+- Categories: Java Web
+- Projects: Web Application with Existing Sources
+- Location: .../Desy-Logbook
+- Java EE Version: Java EE 5
+- Context Path: /newElog
+
+Do some more settings
+- cp web/conf/conf.xml.example web/conf/conf.xml
+- Inside conf.xml:
+ - Set <logbook_path> to an existing folder where the logbooks settings are saved
+ - Make sure the application has write access to the path set in <datapath>
+ - Check the port under <context>
 
 Create a new logbook for testing
---------------------------------
-Run app
-Press 'Extra' and then 'Create a new Logbook'
-Enter username and password of the tomcat manager role (netbeans -> services -> Apache Tomcat 6.0.20 -> properties)
-Fill in
-Name: test
-Title: test title
-New shift: 3
-Press 'Send'
-Add the following xml snippet to the web/WEB-INF/web.xml before the </web-app> tag:
-
+- Run app
+- In the browser press 'Extra' and then 'Create a new Logbook'
+- Enter username and password of the tomcat manager role (netbeans -> services -> Apache Tomcat 6.0.20 -> properties)
+- Fill in
+ - Name: test
+ - Title: test title
+ - New shift: 3
+ - Press 'Send'
+- Add the following xml snippet to the web/WEB-INF/web.xml before the </web-app> tag:
 <servlet-mapping>
     <servlet-name>FrontController</servlet-name>
     <url-pattern>/test</url-pattern>
 </servlet-mapping>
+- Run the project again and visit the test logbook
 
-Run the project again and visit the test logbook
+
+
+Test setup
+================================================
+
+Running the test should work out of the box. Howvever if you want to use the recommended JUnit library you should follow these steps:
+- Open the project properties
+- Select 'Libraries'
+- Select 'Compile Tests'
+- Remove all the old JUnit libraries
+- Add JAR/Folder
+- Select the JUnit library placed in the lib folder of the project
+
+
+
