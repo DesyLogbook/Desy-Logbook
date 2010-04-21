@@ -1,0 +1,14 @@
+<html>
+
+<head>
+<title>$title!</title>
+</head>
+
+<form method="post" action="$sendAction">
+
+<div>$message!</div>
+
+</form>
+
+</body>
+</html>

@@ -3,4 +3,4 @@ build/
 dist/
 nbproject/
 web/conf/conf.xml
-
+web/WEB-INF/web.xml

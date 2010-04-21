@@ -2,11 +2,41 @@
 
 <head>
 <title>Overview</title>
+<style type="text/css">
+.entry{
+  border:1px dashed #ccc;
+  margin: 15px 5px;
+}
+.author{
+  margin:2px;
+  padding: 5px 10px 5px 5px;
+  border-right:1px dashed #ccc;
+  float:left;
+}
+.title{
+  margin:2px;
+  padding: 5px 10px 5px 5px;
+  border-right:1px dashed #ccc;
+  float:left;
+}
+.text{
+  border-top:1px dashed #ccc;
+  margin: 35px 5px 5px 5px;
+  padding: 5px;
+}
+</style>
 </head>
+<body>
 
-<a href="NewEntryServlet">Neuer Eintrag</a>
+    <a href="NewEntryServlet">Neuer Eintrag</a>
 
-<div>$content</div>
+    #foreach($entry in $entries)
+        <div class="entry">
+            <div class="author">$entry.getAuthor()</div>
+            <div class="title">$entry.getTitle()</div>
+            <div class="text">$entry.getText()</div>
+        </div>
+    #end
 
 </body>
 </html>

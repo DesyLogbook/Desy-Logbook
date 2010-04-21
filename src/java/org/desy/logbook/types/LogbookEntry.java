@@ -1,10 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.desy.logbook.types;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.desy.logbook.helper.IOHelper;
 
 /**
@@ -62,30 +59,37 @@ public class LogbookEntry {
         return title;
     }
 
-    public void setFilename(String Filename) {
-        this.filename = Filename;
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
-    public void setAuthor(String Author) {
-        this.author = Author;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public void setDate(String Date) {
-        this.date = Date;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public void setText(String Text) {
-        this.text = Text;
+    public void setDate(Date date) {
+        SimpleDateFormat dateSDF = new SimpleDateFormat("dd-MM-yyyy");
+        this.date = dateSDF.format(date);
     }
 
-    public void setTime(String Time) {
-        this.time = Time;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public void setTitle(String Title) {
-        this.title = Title;
+    public void setTime(String time) {
+        this.time = time;
     }
 
+    public void setTime(Date time) {
+        SimpleDateFormat timeSDF = new SimpleDateFormat("HH:mm:ss");
+        this.date = timeSDF.format(time);
+    }
 
-
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
