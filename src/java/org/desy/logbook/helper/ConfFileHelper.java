@@ -3,9 +3,16 @@ package org.desy.logbook.helper;
 import org.desy.logbook.controller.LogController;
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.StringWriter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -275,6 +282,29 @@ public class ConfFileHelper {
     }
 
     /**
+     * if one or more elements with the given name exist, the text
+     * content of the first one is set to elemValue.
+     * if no element with the given name exists yet a new element
+     * below the root element is created
+     * @param elemName
+     * @param elemValue
+     */
+    public void updateOrCreateTextElement(String elemName, String elemValue)
+    {
+        NodeList l = doc.getElementsByTagName(elemName);
+        if (l.getLength()>0)
+        {
+            l.item(0).setTextContent(elemValue);
+        }
+        else
+        {
+            Element newChild = doc.createElement(elemName);
+            newChild.setTextContent(elemValue);
+            doc.getDocumentElement().appendChild(newChild);
+        }
+    }
+
+    /**
      * static mehtod to check if a string contains
      * a 'valid' xml file
      * @param xml string to be checked
@@ -297,6 +327,33 @@ public class ConfFileHelper {
             return false;
         }
         return xmlDoc!=null;
+    }
+
+    /**
+     * saves all changes to the current conf file. Creates
+     * a backup file (conf.xml.bak)
+     * @return status if saving was successfull
+     */
+    public boolean save()
+    {
+        try {
+            StringWriter stringWriter = new StringWriter();
+            StreamResult streamResult = new StreamResult(stringWriter);
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            transformer.transform(new DOMSource(doc.getDocumentElement()), streamResult);
+
+            String oldConf = IOHelper.readFile(_confPath);
+            IOHelper.writeFile(_confPath+".bak", oldConf);
+
+            return IOHelper.writeFile(_confPath, stringWriter.toString());
+        } catch (Exception e) {
+            LogController.getInstance().log(e.toString());
+            return false;
+        }
     }
 
 

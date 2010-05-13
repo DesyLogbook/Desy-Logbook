@@ -35,11 +35,15 @@
         <servlet-name>ViewServlet</servlet-name>
         <servlet-class>org.desy.logbook.viewServlets.ViewServlet</servlet-class>
     </servlet>
-    <!-- ********** MAPPING ************ -->
     <servlet>
         <servlet-name>NewEntryServlet</servlet-name>
         <servlet-class>org.desy.logbook.viewServlets.NewEntryServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Install</servlet-name>
+        <servlet-class>org.desy.logbook.servlets.Install</servlet-class>
+    </servlet>
+    <!-- ********** MAPPING ************ -->
     <servlet-mapping>
         <servlet-name>NotAvailable</servlet-name>
         <url-pattern>/NotAvailable</url-pattern>
@@ -72,7 +76,6 @@
             <param-value>/WEB-INF/velocity.properties</param-value>
         </init-param>
     </servlet-mapping>
-    <!-- ********** CONFIG ************* -->
     <servlet-mapping>
         <servlet-name>NewEntryServlet</servlet-name>
         <url-pattern>/NewEntryServlet</url-pattern>
@@ -81,6 +84,15 @@
             <param-value>/WEB-INF/velocity.properties</param-value>
         </init-param>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Install</servlet-name>
+        <url-pattern>/Install</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Install</servlet-name>
+        <url-pattern>/install</url-pattern>
+    </servlet-mapping>
+    <!-- ********** CONFIG ************* -->
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
@@ -130,5 +142,5 @@
 
 
     <!-- ********** LOGBOOKS *********** -->
-    
+
 </web-app>

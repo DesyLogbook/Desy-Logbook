@@ -1,0 +1,24 @@
+<html>
+
+<head>
+<title>Install</title>
+</head>
+
+<h2>Welcome to the installation!</h2>
+
+<form method="post" action="$sendAction" >
+
+    <p>Context:<input name="context" type="text" size="30" value="http://localhost:8080/newElog"></p>
+
+    <p>Logbook Path:<input name="logbook_path" type="text" size="30" value="/home/yourhome/logbooks"></p>
+
+    <p>Host data:<input name="host_data" type="text" size="30" value="http://localhost/ELOGDATA"></p>
+
+    <p>Datapath:<input name="datapath" type="text" size="30" value="/var/www/ELOGDATA"></p>
+
+    <p><input type="submit" value=" Install "></p>
+
+</form>
+
+</body>
+</html>
